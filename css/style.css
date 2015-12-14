@@ -1,19 +1,51 @@
+body {
+  background-image: url('../img/footer_lodyas.png');
+}
+
+.clear {
+  clear: both;
+  overflow: auto;
+}
+
 #container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
   text-transform: uppercase;
+  font-size: 50px;
+  color: #eee;
+  text-align: center;
+  background-color:rgba(0,0,1,.4);
 }
 
+#upper-section {
+  height: 550px;
+}
+
+#board {
+  margin: 0 auto;
+  height: 200px;
+}
+
+
+
 .box {
-  display: inline-block;
-  width: 75px;
-  height: 90px;
+  display: block;
+  float: left;
+  width: 70px;
+  height: 85px;
   position: relative;
-  margin-right: 5px;
-  background-color: #eee;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  background-color: #13700a;
+  border: 3px solid #222;
 }
 
 .letter {
@@ -25,9 +57,56 @@ h1 {
 
 #play {
   display: block;
-  background-color: #feefaa;
+  background-color: #ff0032;
+  color: white;
+  border: none;
+  font-weight: bold;
   padding: 10px 20px;
+  margin: 0 auto;
+  margin-top: 15px;
   margin-bottom: 15px;
   text-transform: uppercase;
   font-size: 25px;
+}
+
+.clue {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 15px 20px;
+  font-size: 22px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #ff0032;
+  color: white;
+}
+
+#play:hover {
+  background-color: #de0000;
+}
+
+#play:focus {
+  box-shadow: none;
+}
+
+#lower-section {
+  background-color: rgba(0, 0, 1, .2);
+  height: 250px;
+}
+
+
+#guess {
+  margin-left: 10px;
+  height: 30px;
+  width: 100px;
+}
+
+label {
+  color: white;
+  text-transform: uppercase;
+}
+
+.active {
+  background-color: white;
 }
