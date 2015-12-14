@@ -13,7 +13,7 @@ body {
 }
 
 .bottom_container {
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
 }
 
@@ -23,11 +23,11 @@ body {
 }
 
 h1 {
+  margin: 15px 0;
   text-transform: uppercase;
   font-size: 50px;
   color: #eee;
   text-align: center;
-  background-color:rgba(0,0,1,.4);
 }
 
 #upper-section {
@@ -97,8 +97,8 @@ h1 {
 }
 
 #lower-section {
-  background-color: rgba(0, 0, 1, .2);
-  height: 250px;
+  background-color: rgba(0, 0, 1, .4);
+  height: 270px;
 }
 
 
@@ -117,6 +117,7 @@ h1 {
 }
 
 #spin {
+  float: left;
   margin-bottom: 25px;
 }
 
@@ -136,8 +137,10 @@ h1 {
   float: left;
   width: 200px;
   height: 60px;
-  background-color: #ddd;
+  background-color: #aaa;
   border-radius: 10px;
+  font-size: 24px;
+  text-align: center;
 }
 
 label {
@@ -149,6 +152,10 @@ label {
   float: left;
 }
 
+#guess_section {
+  float: left;
+}
+
 .name {
   text-transform: capitalize;
   color: #ddd;
@@ -157,14 +164,40 @@ label {
   float: right;
 }
 
+.wrong {
+  height: 20px;
+  font-size: 18px;
+  color: #de0000;
+  font-weight: bold;
+}
 
+#letters_heading {
+  width: 205px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid white;
+}
 
 .heading {
   font-size: 26px;
+  font-weight: bold;
+  margin: 10px 0;
   text-transform: uppercase;
   color: #eee;
 }
 
+#spin_value {
+  margin: 0;
+}
+
 .active {
   background-color: white;
+}
+
+.letters_guessed {
+  color: #ddd;
+  margin-top: 5px;
 }

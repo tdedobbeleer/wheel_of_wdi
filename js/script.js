@@ -18,7 +18,26 @@ $(document).ready(function() {
     }]; // Close words
 
     var boardValues = [100, 500, 400, 300, 200, 100, 200, 150, 450, 400, 250,
-                        200, 150, 400, 600, 250, 300, 0, 750, 250, 300, 200]
+        200, 150, 400, 600, 250, 300, "Bankrupt", 750, 250, 300, 200
+    ];
+
+    var wrong = "";
+    var lettersGuessed = [];
+    var score = 0;
+
+    var alpha = /[a-zA-Z]/;
+
+    $("#guess_section").hide();
+
+    function resetGame() {
+        $("p.letters_guessed").text("");
+        $("p.letter").remove();
+        $("p.wrong").text("");
+        $("div.box").removeClass("active");
+        $(".name").text("");
+        $(".clue").remove();
+        $("#play").show();
+    };
 
     function playGame() {
         var playerName = prompt("What is your name?");
@@ -27,7 +46,10 @@ $(document).ready(function() {
         var clue = $('<p class="clue"></p>');
         var splitWord = currentWord.split("");
         var div = $(".box");
-        var wrong = "";
+        $("#guess_section").show();
+        $(".score_value").text(score);
+        console.log(score);
+        $("#spin_container").html('<p id="spin_value">' + boardValues[0] + '</hp');
         console.log(div);
 
         for (var i = 0; i < splitWord.length; i++) {
@@ -53,27 +75,44 @@ $(document).ready(function() {
         $("#board").append(clue);
     };
 
-    $("#play").on("click", function (){
-      $(this).fadeOut(100);
-      playGame();
+    $("#play").on("click", function() {
+        $(this).fadeOut(100);
+        playGame();
 
     })
 
-    $("#submit").on("click", function (event) {
+    // Player guesses
+    $("#submit").on("click", function(event) {
         event.preventDefault();
 
         var guess = $("#guess").val();
         guess = guess.toUpperCase();
+        if (guess.length > 1) {
+            alert("You may only enter one letter at a time");
+            $("#guess").val("");
+            return;
+        } else {
+            if ($("p").hasClass(guess)) {
+                // $("p." + guess).parent().css("background-color", "blue").delay(800).css("background-color", "white");
+                $("p." + guess).css("display", "block");
+            } else {
+                wrong += "X";
+                $(".wrong").append("X");
+                if (wrong === "XXX") {
+                    alert("Sorry you lose");
+                    resetGame();
+                }
+            } // end of if statement, else block
 
-        // clear textbox
-        $("#guess").val("");
-        if ($("p").hasClass(guess)) {
-            $("p." + guess).parent().css("background-color", "blue").delay(800).css("background-color", "white");
+            // update letters guessed array to display to user
+            lettersGuessed.push(guess);
+            $(".letters_guessed").text(lettersGuessed.toString());
+
+            // clear textbox
+            $("#guess").val("");
+        } // end of else block
 
 
-            $("p." + guess).css("display", "block");
-        }
-        console.log(guess);
     });
 
 
