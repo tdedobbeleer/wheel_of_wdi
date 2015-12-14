@@ -9,10 +9,9 @@
 </head>
 
 <body>
-    <div id="container">
+    <div class="container">
         <div id="upper-section">
           <h1>Wheel of WDI</h1>
-
           <div id="board">
             <section class="row">
               <div class="box"></div>
@@ -84,10 +83,25 @@
     </div> <!-- end container -->
 
     <div id="lower-section">
-        <form action="#" method="GET">
-          <label for="guess">Enter a letter: </label>
-          <input type="text" id="guess">
-        </form>
+        <div class="bottom_container">
+
+          <div id="player">
+            <p class="heading">Player:  <span class="name"></span></p>
+          </div>
+          <div id="score">
+            <p class="heading">score:</p>
+          </div>
+          <div class="clear"></div>
+          <div id="spin" class="clear">
+            <button id="spin_btn">Spin</button>
+            <div id="spin_container"></div>
+          </div>
+          <form action="#" method="GET">
+            <label for="guess">Guess a letter: </label>
+            <input type="text" id="guess">
+            <button id="submit">Enter</button>
+          </form>
+        </div>
     </div>
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>

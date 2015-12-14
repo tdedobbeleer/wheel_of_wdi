@@ -7,8 +7,13 @@ body {
   overflow: auto;
 }
 
-#container {
+.container {
   width: 90%;
+  margin: 0 auto;
+}
+
+.bottom_container {
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -57,6 +62,7 @@ h1 {
 
 #play {
   display: block;
+  width: 125px  ;
   background-color: #ff0032;
   color: white;
   border: none;
@@ -78,7 +84,7 @@ h1 {
   font-size: 22px;
   text-transform: uppercase;
   text-align: center;
-  background-color: #ff0032;
+  background-color: #00f;
   color: white;
 }
 
@@ -100,11 +106,63 @@ h1 {
   margin-left: 10px;
   height: 30px;
   width: 100px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+#submit {
+  padding: 10px 25px;
+  border: none;
+}
+
+#spin {
+  margin-bottom: 25px;
+}
+
+#spin_btn {
+  float: left;
+  padding: 10px 20px;
+  background-color: #ff0032;
+  color: white;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 15px;
+  text-transform: uppercase;
+  border: none;
+}
+
+#spin_container {
+  float: left;
+  width: 200px;
+  height: 60px;
+  background-color: #ddd;
+  border-radius: 10px;
 }
 
 label {
   color: white;
   text-transform: uppercase;
+}
+
+#player {
+  float: left;
+}
+
+.name {
+  text-transform: capitalize;
+  color: #ddd;
+}
+#score {
+  float: right;
+}
+
+
+
+.heading {
+  font-size: 26px;
+  text-transform: uppercase;
+  color: #eee;
 }
 
 .active {
