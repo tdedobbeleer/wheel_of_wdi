@@ -31,7 +31,7 @@ h1 {
 }
 
 #upper-section {
-  height: 550px;
+  height: 530px;
 }
 
 #board {
@@ -44,8 +44,8 @@ h1 {
 .box {
   display: block;
   float: left;
-  width: 70px;
-  height: 85px;
+  width: 65px;
+  height: 80px;
   position: relative;
   margin-right: 3px;
   margin-bottom: 3px;
@@ -80,7 +80,7 @@ h1 {
   width: 150px;
   margin: 0 auto;
   margin-top: 15px;
-  padding: 15px 20px;
+  padding: 10px 20px;
   font-size: 22px;
   text-transform: uppercase;
   text-align: center;
@@ -138,7 +138,7 @@ h1 {
   width: 200px;
   height: 60px;
   background-color: #aaa;
-  border-radius: 10px;
+  border-radius: 6px;
   font-size: 24px;
   text-align: center;
 }
@@ -190,7 +190,9 @@ label {
 }
 
 #spin_value {
+  font-size: 32px;
   margin: 0;
+  margin-top: 10px;
 }
 
 .active {

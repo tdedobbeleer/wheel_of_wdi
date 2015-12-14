@@ -24,6 +24,7 @@ $(document).ready(function() {
     var wrong = "";
     var lettersGuessed = [];
     var score = 0;
+    var isGameOver = 0;
 
     var alpha = /[a-zA-Z]/;
 
@@ -31,6 +32,7 @@ $(document).ready(function() {
 
     function resetGame() {
         $("p.letters_guessed").text("");
+        $("#guess_section").hide();
         $("p.letter").remove();
         $("p.wrong").text("");
         $("div.box").removeClass("active");
@@ -40,12 +42,13 @@ $(document).ready(function() {
     };
 
     function playGame() {
-        var playerName = prompt("What is your name?");
+        var playerName = prompt("What is your name?") || "John Doe";
         var rand = Math.floor(Math.random() * words.length);
         var currentWord = words[rand].word.toUpperCase();
         var clue = $('<p class="clue"></p>');
         var splitWord = currentWord.split("");
         var div = $(".box");
+        isGameOver = 0;
         $("#guess_section").show();
         $(".score_value").text(score);
         console.log(score);
@@ -56,14 +59,19 @@ $(document).ready(function() {
 
             // make the p element
             var p = $("<p></p>");
-            // hide the letter
-            p.css("display", "none");
+            // hide the letter by changing display if not blank
+            if (splitWord[i] === " ") {
+                p.css("display", "block")
+            } else {
+                p.css("display", "none");
+            }
+
             p.addClass("letter");
             p.addClass(splitWord[i]);
             p.text(splitWord[i]);
-            console.log(div[i]);
+            // console.log(div[i]);
             p.appendTo(div[i + 13]);
-            console.log(div[i]);
+            // console.log(div[i]);
             if (splitWord[i] !== " ") {
                 $(div[i + 13]).addClass("active");
             }
@@ -91,7 +99,7 @@ $(document).ready(function() {
             alert("You may only enter one letter at a time");
             $("#guess").val("");
             return;
-        } else {
+        } else if (guess.match(alpha)) {
             if ($("p").hasClass(guess)) {
                 // $("p." + guess).parent().css("background-color", "blue").delay(800).css("background-color", "white");
                 $("p." + guess).css("display", "block");
@@ -101,6 +109,7 @@ $(document).ready(function() {
                 if (wrong === "XXX") {
                     alert("Sorry you lose");
                     resetGame();
+                    isGameOver = 1;
                 }
             } // end of if statement, else block
 
@@ -110,10 +119,20 @@ $(document).ready(function() {
 
             // clear textbox
             $("#guess").val("");
+
+            if ( $(".letter[style='display: none;']").length === 0 && isGameOver !== 1) {
+                alert("Congrats, you win!")
+                resetGame();
+            }
+        } else {
+            // user has entered a value but value was not a letter
+            $("#guess").val("");
+            alert("You must enter a letter");
         } // end of else block
-
-
     });
 
+    $("#spin_btn").on("click", function() {
+
+    })
 
 });
