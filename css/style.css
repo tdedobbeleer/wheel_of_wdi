@@ -32,7 +32,10 @@ h1 {
 
 .btn {
   border: none;
-  padding: 5px 10px;
+  padding: 10px 10px;
+  border-radius: 2px;
+  text-transform: uppercase;
+
 }
 #upper-section {
   height: 485px;
@@ -76,18 +79,19 @@ h1 {
   margin-bottom: 10px;
   text-transform: uppercase;
   font-size: 25px;
+  transition: background-color .3s;
 }
 
 .clue {
   display: block;
-  width: 550px;
+  width: 700px;
   margin: 0 auto;
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 22px;
   text-transform: uppercase;
   text-align: center;
-  background: linear-gradient(90deg, transparent 20%, #00f, rgba(0,0,0,0) 80%);
+  background: linear-gradient(90deg, transparent 25%, #00f, rgba(0,0,0,0) 75%);
   color: white;
 }
 
@@ -95,8 +99,8 @@ h1 {
   background-color: #de0000;
 }
 
-#play:focus {
-  box-shadow: none;
+:focus {
+  outline: none;
 }
 
 #lower-section {
@@ -116,6 +120,8 @@ h1 {
 
 #submit {
   padding: 10px 25px;
+  background-color: #888;
+  color: white;
   border: none;
 }
 
@@ -135,6 +141,11 @@ h1 {
   margin-left: 15px;
   text-transform: uppercase;
   border: none;
+  transition: background-color .3s;
+}
+
+#spin_btn:hover {
+   background-color: #de0000;
 }
 
 #spin_btn:disabled {
@@ -144,7 +155,7 @@ h1 {
 
 #spin_container {
   float: left;
-  width: 200px;
+  width: 170px;
   height: 50px;
   background: linear-gradient(180deg, #ddd 10%, white, #ddd 90%);
   border-radius: 6px;
@@ -210,19 +221,29 @@ label {
   margin-top: 5px;
 }
 #solve {
-  width: 145px;
+  width: 180px;
   margin: 0 auto;
 }
 #solve_btn {
   display: inline-block;
-  width: 145px;
-  background-color: #3F7AE1;
-  color: white;
+  width: 180px;
+  background-color: rgba(0,0,1,.2);
+  border: 1px solid rgba(255, 255, 255, .4);
+  color: #ddd;
   margin: 0 auto;
+  transition: background-color .3s;
+}
+
+#solve_btn:hover {
+  background-color: rgba(255,255,255,.1);
 }
 
 .active {
   background-color: white;
+}
+
+#spin_value {
+  webkit-animation-duration: 30s;
 }
 
 .letters_guessed {

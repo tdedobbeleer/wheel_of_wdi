@@ -21,6 +21,9 @@ $(document).ready(function() {
         200, 150, 400, 600, 250, 300, "BANKRUPT", 750, 250, 300, 200
     ];
 
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    console.log(alphabet.length)
+
     var wrong = "";
     var currentWord = "";
     var lettersGuessed = [];
@@ -45,6 +48,8 @@ $(document).ready(function() {
         $("p.letter").remove();
         $("p.wrong").text("");
         $("#spin").hide();
+        $("#solve").hide();
+        $("#spin_btn").removeAttr("disabled");
         $("#spin_value").remove();
         $("div.box").removeClass("active");
         $(".name").text("");
@@ -66,9 +71,10 @@ $(document).ready(function() {
         $("#spin").show();
         $("#solve").show();
         $(".score_value").text("0");
-        console.log(score);
         $("#spin_container").html('<p id="spin_value"></p');
-        console.log(div);
+        $("#spin_btn").toggleClass("animated pulse");
+        $("#spin_btn").css("webkit-animation-iteration-count", "infinite");
+
 
         for (var i = 0; i < splitWord.length; i++) {
 
@@ -112,6 +118,7 @@ $(document).ready(function() {
         var guess = $("#guess").val();
         guess = guess.toUpperCase();
         if (guess.length > 1) {
+            // They try to put more than one letter in at a time
             alert("You may only enter one letter at a time");
             $("#guess").val("");
             return;
@@ -158,6 +165,7 @@ $(document).ready(function() {
             lettersGuessed.push(guess);
             $(".letters_guessed").text(lettersGuessed.toString());
 
+            $("#spin_btn").toggleClass("animated pulse");
             // clear textbox
             $("#guess").val("");
 
@@ -172,13 +180,17 @@ $(document).ready(function() {
         } // end of else block
     }); // end of click event for player guess
 
+    // Transform all user input to uppercase
     $("#guess").on("keyup", function() {
         $(this).val(($(this).val()).toUpperCase());
-    })
+    }) // end of guess keyup event
 
-    $("#spin_btn").on("click", function() {
+    // Player clicks spin
+    $("#spin").on("click", function() {
         var rand = Math.floor(Math.random() * boardValues.length);
-        $("#spin_container").html('<p id="spin_value">' + boardValues[rand] + '</p>');
+        $("#spin_container").html('<p id="spin_value" class="animated fadeInDownBig">' + boardValues[rand] + '</p>');
+        $("#spin_value").css("webkit-animation-duration", ".4s");
+        $("#spin_btn").toggleClass("animated pulse");
         $("#spin_btn").attr("disabled", "disabled");
         if ($("#spin_value").text() === "BANKRUPT") {
             $(".score_value").text("0");
