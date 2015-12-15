@@ -27,14 +27,16 @@ $(document).ready(function() {
     var isGameOver = 0;
 
     var alpha = /[a-zA-Z]/;
+    var vowels = /[aeiou]/i;
 
     // Hide some stuff before user selects to play
     $("#guess_section").hide();
     $("#spin").hide();
 
     function resetGame() {
-        $("p.letters_guessed").text("");
         lettersGuessed = [];
+        $("p.letters_guessed").remove();
+        score = 0;
         $(".score_value").text("");
         $("#guess_section").hide();
         $("p.letter").remove();
@@ -85,13 +87,13 @@ $(document).ready(function() {
             // $("#board").append(div);
 
         };
-        clue.text(words[rand].topic);
+        clue.text(words[rand].topic).fadeIn(300);
         $(".name").text(playerName);
         $("#board").append(clue);
     };
 
     $("#play").on("click", function() {
-        $(this).fadeOut(100);
+        $(this).fadeOut(200);
         playGame();
 
     })
@@ -115,6 +117,9 @@ $(document).ready(function() {
                 // Get the amount of occurences of the letter in the word
                 if ($("#spin_value").text() === "BANKRUPT") {
                     $(".score_value").text("0");
+                } else if ( guess.match(vowels)) {
+                    occurences = $("p." + guess).length;
+                    score -= ( parseInt($("#spin_value").text(), 10) * occurences);
                 } else {
                     occurences = $("p." + guess).length;
                     score += ( parseInt($("#spin_value").text(), 10) * occurences);
@@ -131,6 +136,7 @@ $(document).ready(function() {
                 wrong += "X";
                 $(".wrong").append("X");
                 $("#spin_btn").removeAttr("disabled");
+                $("#guess_section").fadeOut(200);
                 if (wrong === "XXX") {
                     alert("Sorry you lose");
 
@@ -147,8 +153,7 @@ $(document).ready(function() {
             $("#guess").val("");
 
             if ( $(".letter[style='display: none;']").length === 0 && isGameOver !== 1) {
-                alert("Congrats, you win!")
-
+                alert("Congrats, you win $" + score + "!");
                 resetGame();
             }
         } else {
@@ -164,6 +169,8 @@ $(document).ready(function() {
         $("#spin_btn").attr("disabled", "disabled");
         if ($("#spin_value").text() === "BANKRUPT") {
             $(".score_value").text("0");
+            score = 0;
+            $("#guess_section").fadeIn(500);
         } else {
             $("#guess_section").fadeIn(500);
         }

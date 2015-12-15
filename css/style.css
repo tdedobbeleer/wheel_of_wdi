@@ -77,14 +77,14 @@ h1 {
 
 .clue {
   display: block;
-  width: 150px;
+  width: 550px;
   margin: 0 auto;
   margin-top: 15px;
   padding: 10px 20px;
   font-size: 22px;
   text-transform: uppercase;
   text-align: center;
-  background-color: #00f;
+  background: linear-gradient(90deg, transparent 20%, #00f, rgba(0,0,0,0) 80%);
   color: white;
 }
 
@@ -156,7 +156,7 @@ label {
 
 #guess_section {
   float: left;
-  margin-left: 80px;
+  margin-left: 70px;
   margin-top: 15px;
 }
 
