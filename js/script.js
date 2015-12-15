@@ -39,6 +39,12 @@ $(document).ready(function() {
     $("#spin").hide();
     $("#solve").hide();
 
+    function makeLetters(word) {
+        return word.split("").map(function(letter){
+            return {name: letter, chosen: false};
+        });
+    };
+
     function resetGame() {
         lettersGuessed = [];
         $("p.letters_guessed").remove();
@@ -66,6 +72,9 @@ $(document).ready(function() {
         var splitWord = currentWord.split("");
         var div = $(".box");
         isGameOver = 0;
+
+        var letterOptions = makeLetters(alphabet);
+        console.log(letterOptions);
 
         // Show some stuff
         $("#spin").show();
@@ -150,6 +159,7 @@ $(document).ready(function() {
             // They get the answer wrong
             } else {
                 wrong += "X";
+                console.log()
                 $(".wrong").append("X");
                 $("#spin_btn").removeAttr("disabled");
                 $("#guess_section").fadeOut(200);
