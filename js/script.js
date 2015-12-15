@@ -18,7 +18,7 @@ $(document).ready(function() {
     }]; // Close words
 
     var boardValues = [100, 500, 400, 300, 200, 100, 200, 150, 450, 400, 250,
-        200, 150, 400, 600, 250, 300, "Bankrupt", 750, 250, 300, 200
+        200, 150, 400, 600, 250, 300, "BANKRUPT", 750, 250, 300, 200
     ];
 
     var wrong = "";
@@ -28,13 +28,18 @@ $(document).ready(function() {
 
     var alpha = /[a-zA-Z]/;
 
+    // Hide some stuff before user selects to play
     $("#guess_section").hide();
+    $("#spin").hide();
 
     function resetGame() {
         $("p.letters_guessed").text("");
+        lettersGuessed = [];
+        $(".score_value").text("");
         $("#guess_section").hide();
         $("p.letter").remove();
         $("p.wrong").text("");
+        $("#spin_value").remove();
         $("div.box").removeClass("active");
         $(".name").text("");
         $(".clue").remove();
@@ -49,10 +54,12 @@ $(document).ready(function() {
         var splitWord = currentWord.split("");
         var div = $(".box");
         isGameOver = 0;
-        $("#guess_section").show();
-        $(".score_value").text(score);
+
+        // Show some stuff
+        $("#spin").show();
+        $(".score_value").text("0");
         console.log(score);
-        $("#spin_container").html('<p id="spin_value">' + boardValues[0] + '</hp');
+        $("#spin_container").html('<p id="spin_value"></p');
         console.log(div);
 
         for (var i = 0; i < splitWord.length; i++) {
@@ -93,6 +100,7 @@ $(document).ready(function() {
     $("#submit").on("click", function(event) {
         event.preventDefault();
 
+        var occurences = 0;
         var guess = $("#guess").val();
         guess = guess.toUpperCase();
         if (guess.length > 1) {
@@ -100,14 +108,32 @@ $(document).ready(function() {
             $("#guess").val("");
             return;
         } else if (guess.match(alpha)) {
+            // They get the answer correct
             if ($("p").hasClass(guess)) {
                 // $("p." + guess).parent().css("background-color", "blue").delay(800).css("background-color", "white");
                 $("p." + guess).css("display", "block");
+                // Get the amount of occurences of the letter in the word
+                if ($("#spin_value").text() === "BANKRUPT") {
+                    $(".score_value").text("0");
+                } else {
+                    occurences = $("p." + guess).length;
+                    score += ( parseInt($("#spin_value").text(), 10) * occurences);
+                }
+
+                console.log(occurences);
+                // Update score with numerical value of spin value
+
+                $(".score_value").text(score);
+                $("#spin_btn").removeAttr("disabled");
+                $("#guess_section").fadeOut(200);
+            // They get the answer wrong
             } else {
                 wrong += "X";
                 $(".wrong").append("X");
+                $("#spin_btn").removeAttr("disabled");
                 if (wrong === "XXX") {
                     alert("Sorry you lose");
+
                     resetGame();
                     isGameOver = 1;
                 }
@@ -122,6 +148,7 @@ $(document).ready(function() {
 
             if ( $(".letter[style='display: none;']").length === 0 && isGameOver !== 1) {
                 alert("Congrats, you win!")
+
                 resetGame();
             }
         } else {
@@ -132,6 +159,15 @@ $(document).ready(function() {
     });
 
     $("#spin_btn").on("click", function() {
+        var rand = Math.floor(Math.random() * boardValues.length);
+        $("#spin_container").html('<p id="spin_value">' + boardValues[rand] + '</p>');
+        $("#spin_btn").attr("disabled", "disabled");
+        if ($("#spin_value").text() === "BANKRUPT") {
+            $(".score_value").text("0");
+        } else {
+            $("#guess_section").fadeIn(500);
+        }
+        console.log("Random number is: " + rand);
 
     })
 
