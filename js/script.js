@@ -22,6 +22,7 @@ $(document).ready(function() {
     ];
 
     var wrong = "";
+    var currentWord = "";
     var lettersGuessed = [];
     var score = 0;
     var isGameOver = 0;
@@ -29,9 +30,11 @@ $(document).ready(function() {
     var alpha = /[a-zA-Z]/;
     var vowels = /[aeiou]/i;
 
+    $(".score_value").text("0");
     // Hide some stuff before user selects to play
     $("#guess_section").hide();
     $("#spin").hide();
+    $("#solve").hide();
 
     function resetGame() {
         lettersGuessed = [];
@@ -41,6 +44,7 @@ $(document).ready(function() {
         $("#guess_section").hide();
         $("p.letter").remove();
         $("p.wrong").text("");
+        $("#spin").hide();
         $("#spin_value").remove();
         $("div.box").removeClass("active");
         $(".name").text("");
@@ -51,7 +55,8 @@ $(document).ready(function() {
     function playGame() {
         var playerName = prompt("What is your name?") || "John Doe";
         var rand = Math.floor(Math.random() * words.length);
-        var currentWord = words[rand].word.toUpperCase();
+        currentWord = words[rand].word.toUpperCase();
+        console.log(currentWord);
         var clue = $('<p class="clue"></p>');
         var splitWord = currentWord.split("");
         var div = $(".box");
@@ -59,6 +64,7 @@ $(document).ready(function() {
 
         // Show some stuff
         $("#spin").show();
+        $("#solve").show();
         $(".score_value").text("0");
         console.log(score);
         $("#spin_container").html('<p id="spin_value"></p');
@@ -96,7 +102,7 @@ $(document).ready(function() {
         $(this).fadeOut(200);
         playGame();
 
-    })
+    }) // end of click event for play
 
     // Player guesses
     $("#submit").on("click", function(event) {
@@ -114,18 +120,21 @@ $(document).ready(function() {
             if ($("p").hasClass(guess)) {
                 // $("p." + guess).parent().css("background-color", "blue").delay(800).css("background-color", "white");
                 $("p." + guess).css("display", "block");
-                // Get the amount of occurences of the letter in the word
+
                 if ($("#spin_value").text() === "BANKRUPT") {
                     $(".score_value").text("0");
                 } else if ( guess.match(vowels)) {
+                    // Get the amount of occurences of the letter in the word
                     occurences = $("p." + guess).length;
                     score -= ( parseInt($("#spin_value").text(), 10) * occurences);
                 } else {
+                    // Get the amount of occurences of the letter in the word
                     occurences = $("p." + guess).length;
                     score += ( parseInt($("#spin_value").text(), 10) * occurences);
                 }
 
                 console.log(occurences);
+                console.log(currentWord);
                 // Update score with numerical value of spin value
 
                 $(".score_value").text(score);
@@ -161,7 +170,11 @@ $(document).ready(function() {
             $("#guess").val("");
             alert("You must enter a letter");
         } // end of else block
-    });
+    }); // end of click event for player guess
+
+    $("#guess").on("keyup", function() {
+        $(this).val(($(this).val()).toUpperCase());
+    })
 
     $("#spin_btn").on("click", function() {
         var rand = Math.floor(Math.random() * boardValues.length);
@@ -170,12 +183,22 @@ $(document).ready(function() {
         if ($("#spin_value").text() === "BANKRUPT") {
             $(".score_value").text("0");
             score = 0;
-            $("#guess_section").fadeIn(500);
+            $("#spin_btn").removeAttr("disabled");
+            // $("#guess_section").fadeIn(500);
         } else {
             $("#guess_section").fadeIn(500);
         }
         console.log("Random number is: " + rand);
 
-    })
+    }) // end of click event for spin button
 
+    $("#solve_btn").on("click", function() {
+        var userAnswer = (prompt("What is the answer?")).toUpperCase();
+        if ( userAnswer === currentWord ) {
+            alert("Congrats, you win $" + score + "!");
+            resetGame();
+        } else {
+            alert("Nope");
+        }
+    }); // end of click event for solve button
 });
