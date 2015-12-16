@@ -6,15 +6,16 @@ Trello Board: https://trello.com/b/zjN52Nde/wheel-of-wdi
 
 ##Overview
 
-##Mockup
+##Wireframe
+![A Wireframe of Wheel of WDI](https://github.com/chadchristensen/wheel_of_wdi/blob/master/Wheel_of_WDI_Wireframe.JPG?raw=true)
 
 ##Technologies Used
-###Languages
+#####Languages
 - HTML
 - CSS
 - JavaScript
 
-###Libraries
+#####Libraries
 - jQuery
 - animate.css
 - normalize.css
