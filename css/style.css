@@ -1,290 +1,292 @@
 body {
-  font-family:'Roboto Condensed', sans-serif;
-  background-image: url('../img/footer_lodyas.png');
+    font-family: 'Roboto Condensed', sans-serif;
+    background-image: url('../img/footer_lodyas.png');
 }
 
 .clear {
-  clear: both;
-  overflow: auto;
+    clear: both;
+    overflow: auto;
 }
 
 .container {
-  width: 90%;
-  margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .bottom_container {
-  width: 80%;
-  margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .row {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
-  margin: 15px 0;
-  text-transform: uppercase;
-  font-size: 38px;
-  color: #eee;
-  text-align: center;
+    margin: 15px 0;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 38px;
+    color: #eee;
+    text-align: center;
 }
 
 span {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 .btn {
-  border: none;
-  padding: 10px 10px;
-  border-radius: 2px;
-  text-transform: uppercase;
-
+    border: none;
+    padding: 10px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
 }
+
 #upper-section {
-  height: 490px;
+    height: 490px;
 }
 
 #board {
-  margin: 0 auto;
-  height: 200px;
+    margin: 0 auto;
+    height: 200px;
 }
 
-
-
 .box {
-  display: block;
-  float: left;
-  width: 65px;
-  height: 80px;
-  position: relative;
-  margin-right: 3px;
-  margin-bottom: 3px;
-  background-color: #13700a;
-  border: 3px solid #222;
+    display: block;
+    float: left;
+    width: 65px;
+    height: 80px;
+    position: relative;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    background-color: #13700a;
+    border: 3px solid #222;
 }
 
 .letter {
-  text-align: center;
-  margin: 10px 0;
-  color: #111;
-  font-size: 60px;
+    text-align: center;
+    margin: 10px 0;
+    color: #111;
+    font-size: 60px;
 }
 
 #play {
-  display: block;
-  width: 125px  ;
-  background-color: #ff0032;
-  color: white;
-  border: none;
-  font-weight: bold;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  font-size: 25px;
-  transition: background-color .3s;
+    display: block;
+    width: 125px;
+    background-color: #ff0032;
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 25px;
+    transition: background-color .3s;
 }
 
 .clue {
-  display: block;
-  width: 700px;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 22px;
-  text-transform: uppercase;
-  text-align: center;
-  background: linear-gradient(90deg, transparent 25%, #00f, rgba(0,0,0,0) 75%);
-  color: white;
+    display: block;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(90deg, transparent 25%, #00f, rgba(0, 0, 0, 0) 75%);
+    color: white;
 }
 
 #play:hover {
-  background-color: #de0000;
+    background-color: #de0000;
 }
 
 :focus {
-  outline: none;
+    outline: none;
 }
 
 #lower-section {
-  background-color: rgba(0, 0, 1, .4);
-  height: 270px;
+    background-color: rgba(0, 0, 1, .4);
+    height: 270px;
 }
 
-
 #guess {
-  margin-left: 10px;
-  height: 30px;
-  width: 25px;
-  padding-left: 10px;
-  font-size: 20px;
-  margin-right: 15px;
+    margin-left: 10px;
+    height: 30px;
+    width: 25px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 15px;
 }
 
 #submit {
-  padding: 10px 25px;
-  background-color: #888;
-  color: white;
-  border: none;
+    padding: 10px 25px;
+    background-color: #888;
+    color: white;
+    border: none;
 }
 
 #spin {
-  float: left;
-  margin: 15px 0 15px 0;
-  width: 320px;
+    float: left;
+    margin: 15px 0 15px 0;
+    width: 320px;
 }
 
 #spin_btn {
-  float: left;
-  padding: 10px 15px;
-  background-color: #ff0032;
-  color: white;
-  font-size: 20px;
-  margin-top: 7px;
-  margin-right: 15px;
-  margin-left: 15px;
-  text-transform: uppercase;
-  border: none;
-  transition: background-color .3s;
+    float: left;
+    padding: 10px 15px;
+    background-color: #ff0032;
+    color: white;
+    font-size: 20px;
+    margin-top: 7px;
+    margin-right: 15px;
+    margin-left: 15px;
+    text-transform: uppercase;
+    border: none;
+    transition: background-color .3s;
 }
 
 #spin_btn:hover {
-   background-color: #de0000;
+    background-color: #de0000;
 }
 
 #spin_btn:disabled {
-  background-color: #FF5E7E;
-  cursor: not-allowed;
+    background-color: #FF5E7E;
+    cursor: not-allowed;
 }
 
 #spin_container {
-  float: left;
-  width: 190px;
-  height: 50px;
-  background: linear-gradient(180deg, #ddd 10%, white, #ddd 90%);
-  border-radius: 6px;
-  border: 3px solid #555;
-  font-size: 24px;
-  text-align: center;
+    float: left;
+    width: 190px;
+    height: 50px;
+    background: linear-gradient(180deg, #ddd 10%, white, #ddd 90%);
+    border-radius: 6px;
+    border: 3px solid #555;
+    font-size: 24px;
+    text-align: center;
 }
 
 label {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 
 #player {
-  float: left;
+    float: left;
 }
 
 #guess_section {
-  margin-left: 70px;
-  margin-top: 15px;
+    margin-left: 70px;
+    margin-top: 15px;
 }
 
 .name {
-  text-transform: capitalize;
-  color: #ddd;
+    text-transform: capitalize;
+    color: #ddd;
 }
+
 #score {
-  float: right;
-  height: 70px;
+    float: right;
+    height: 70px;
 }
 
 .wrong {
-  height: 20px;
-  font-size: 18px;
-  color: #de0000;
-  font-weight: bold;
-  margin: 5px 0;
+    height: 20px;
+    font-size: 18px;
+    color: #de0000;
+    font-weight: bold;
+    margin: 5px 0;
 }
 
 #letters_heading {
-  width: 160px;
-  font-size: 16px;
-  color: white;
-  margin-bottom: 0;
-  padding-bottom: 1px;
-  text-transform: uppercase;
-  border-bottom: 1px solid #ddd;
+    width: 160px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
 }
 
 .heading {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 20px 0 5px;
-  text-transform: uppercase;
-  color: #eee;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px 0 5px;
+    text-transform: uppercase;
+    color: #eee;
 }
 
 #spin_value {
-  font-size: 32px;
-  margin: 0;
-  margin-top: 5px;
+    font-size: 32px;
+    margin: 0;
+    margin-top: 5px;
 }
+
 #solve {
-  width: 180px;
-  margin: 0 auto;
+    width: 180px;
+    margin: 0 auto;
 }
+
 #solve_btn {
-  display: inline-block;
-  width: 180px;
-  background-color: rgba(0,0,1,.2);
-  border: 1px solid rgba(255, 255, 255, .4);
-  color: #ddd;
-  margin: 0 auto;
-  transition: background-color .3s;
+    display: inline-block;
+    width: 180px;
+    background-color: rgba(0, 0, 1, .2);
+    border: 1px solid rgba(255, 255, 255, .4);
+    color: #ddd;
+    margin: 0 auto;
+    transition: background-color .3s;
 }
 
 #solve_btn:hover {
-  background-color: rgba(255,255,255,.1);
+    background-color: rgba(255, 255, 255, .1);
 }
 
 .active {
-  background-color: white;
+    background-color: white;
 }
 
 #spin_value {
-  webkit-animation-duration: 30s;
+    webkit-animation-duration: 30s;
 }
 
 .letters_guessed {
-  color: #ddd;
-  margin-top: 5px;
+    color: #ddd;
+    margin-top: 5px;
 }
 
 .alphabet {
-  width: 32px;
-  height: 36px;
-  margin-right: 3px;
+    width: 32px;
+    height: 36px;
+    margin-right: 3px;
 }
 
 #hint_section {
-  float: left;
-  width: 95px;
-  margin-top: 35px;
-  margin-left: 90px;
+    float: left;
+    width: 95px;
+    margin-top: 35px;
+    margin-left: 90px;
 }
 
 .hint_text {
-  font-family: 'Architects Daughter', cursive;
-  display: inline;
-  padding-right: 2px;
-  color: #aaa;
+    font-family: 'Architects Daughter', cursive;
+    display: inline;
+    padding-right: 2px;
+    color: #aaa;
 }
 
 .icon {
-  width: 15px;
-  color: #aaa;
-  opacity: .6;
+    width: 15px;
+    color: #aaa;
+    opacity: .6;
 }
+
 #letters_section {
-  display: flex;
-  justify-content: center;
-  heigth: 36px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    heigth: 36px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }

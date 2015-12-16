@@ -8,6 +8,8 @@ Project: http://wheel-of-wdi.bitballoon.com/
 Trello Board: https://trello.com/b/zjN52Nde/wheel-of-wdi
 
 ##Overview
+The goal of this project was to use our skills in HTML, CSS, and JavaScript to
+create a game that required manipulation of the DOM.
 
 ##How to play
 1. Click the Play button
@@ -15,6 +17,8 @@ Trello Board: https://trello.com/b/zjN52Nde/wheel-of-wdi
 3. Click the Spin button
 4. Once alphabet appears, select a letter (vowels will cost you)
 5. Continue clicking spin and selecting letters until all letters are revealed or you guess wrong 3 times
+
+__Note:__ If you know the answer, click "Solve The Puzzle" button and enter your guess
 
 
 ##Wireframe
@@ -29,7 +33,10 @@ Trello Board: https://trello.com/b/zjN52Nde/wheel-of-wdi
 ####Phase 1
 - Add logic to break multi-word phrases onto two lines
 - Add spin animation to the spin container
+- Add semi-transparent Wheel of WDI graphic to the background of the green board tiles
+- Add animation to turn the background of correctly guessed letters blue before revealing the letter
 
 ####Phase 2
 - Remove the spin container and add a multi-colored wheel
+- Add multi-player mode for up to 3 players
 

@@ -43,11 +43,13 @@ $(document).ready(function() {
     var vowels = /[aeiou]/i;
     var letterOptions = makeLetters(alphabet);
 
+    // Create 26 buttons for each of the letters in the alphabet
     $.each(letterOptions, function(index, value) {
         var button = $('<button class="alphabet">' + value.name + "</button>");
         $("#letters_section").append(button);
     })
 
+    // Set score to 0
     $(".score_value").text(score);
     // Hide some stuff before user selects to play
     $(".alphabet").hide();
@@ -65,10 +67,10 @@ $(document).ready(function() {
         });
     };
 
+    // clear and hide all necessary values to reset game
     function resetGame() {
         score = 0;
         $(".score_value").text(score);
-
         $("#guess_section").hide();
         $("p.letter").remove();
         wrong = "";
@@ -81,19 +83,19 @@ $(document).ready(function() {
         $("div.box").removeClass("active");
         $(".name").text("");
         $(".clue").remove();
-        $("#play").fadeIn();
+        // remove the disabled attribute from all 26 letter buttons
         $(".alphabet").each(function(index) {
             $(this).removeAttr("disabled");
             // console.log(index);
         });
         $(".alphabet").hide();
+        $("#play").fadeIn();
     };
 
     function playGame() {
         var playerName = prompt("What is your name?") || "John Doe";
         var rand = Math.floor(Math.random() * words.length);
         currentWord = words[rand].word.toUpperCase();
-        // console.log(currentWord);
         var clue = $('<p class="clue"></p>');
         var splitWord = currentWord.split("");
         var div = $(".box");
@@ -187,21 +189,13 @@ $(document).ready(function() {
 
         $(".alphabet").fadeOut(100);
         $("#solve").fadeOut(100);
-
-
         $("#spin_btn").toggleClass("animated pulse");
-
 
         if ($(".letter[style='display: none;']").length === 0 && isGameOver !== 1) {
             alert("Congrats, you win $" + score + "!");
             resetGame();
         }
     }); // end of click event for player guess
-
-    // Transform all user input to uppercase
-    $("#guess").on("keyup", function() {
-            $(this).val(($(this).val()).toUpperCase());
-        }) // end of guess keyup event
 
     // Player clicks spin
     $("#spin").on("click", function() {
@@ -217,7 +211,6 @@ $(document).ready(function() {
                 $(".score_value").text("0");
                 score = 0;
                 $("#spin_btn").removeAttr("disabled");
-                // $("#guess_section").fadeIn(500);
             }
 
         }) // end of click event for spin button
