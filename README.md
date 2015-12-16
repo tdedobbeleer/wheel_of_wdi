@@ -12,7 +12,7 @@ The goal of this project was to use our skills in HTML, CSS, and JavaScript to
 create a game that required manipulation of the DOM.  I chose a variation of Wheel of Fortune based on
 phrases and people related to the Web Development Immersive program.
 
-![Picture of Wheel of WDI]()
+![Picture of Wheel of WDI](https://github.com/chadchristensen/wheel_of_wdi/blob/master/Wheel_Of_WDI.png?raw=true)
 
 ##How to play
 1. Click the Play button
