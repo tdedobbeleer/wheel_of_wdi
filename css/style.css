@@ -13,7 +13,7 @@ body {
 }
 
 .bottom_container {
-  width: 65%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -30,6 +30,10 @@ h1 {
   text-align: center;
 }
 
+span {
+  font-weight: normal;
+}
+
 .btn {
   border: none;
   padding: 10px 10px;
@@ -38,7 +42,7 @@ h1 {
 
 }
 #upper-section {
-  height: 485px;
+  height: 490px;
 }
 
 #board {
@@ -127,7 +131,8 @@ h1 {
 
 #spin {
   float: left;
-  margin-bottom: 20px;
+  margin: 15px 0 15px 0;
+  width: 320px;
 }
 
 #spin_btn {
@@ -155,7 +160,7 @@ h1 {
 
 #spin_container {
   float: left;
-  width: 170px;
+  width: 190px;
   height: 50px;
   background: linear-gradient(180deg, #ddd 10%, white, #ddd 90%);
   border-radius: 6px;
@@ -193,7 +198,7 @@ label {
   font-size: 18px;
   color: #de0000;
   font-weight: bold;
-  margin-top: 5px;
+  margin: 5px 0;
 }
 
 #letters_heading {
@@ -209,7 +214,7 @@ label {
 .heading {
   font-size: 22px;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 20px 0 5px;
   text-transform: uppercase;
   color: #eee;
 }
@@ -248,4 +253,36 @@ label {
 .letters_guessed {
   color: #ddd;
   margin-top: 5px;
+}
+
+.alphabet {
+  width: 32px;
+  height: 36px;
+  margin-right: 3px;
+}
+
+#hint_section {
+  float: left;
+  width: 95px;
+  margin-top: 35px;
+  margin-left: 55px;
+}
+
+.hint_text {
+  display: inline;
+  padding-right: 2px;
+  color: #aaa;
+}
+
+.icon {
+  width: 15px;
+  color: #aaa;
+  opacity: .6;
+}
+#letters_section {
+  display: flex;
+  justify-content: center;
+  heigth: 36px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
