@@ -1,4 +1,5 @@
 body {
+  font-family:'Roboto Condensed', sans-serif;
   background-image: url('../img/footer_lodyas.png');
 }
 
@@ -269,6 +270,7 @@ label {
 }
 
 .hint_text {
+  font-family: 'Architects Daughter', cursive;
   display: inline;
   padding-right: 2px;
   color: #aaa;
