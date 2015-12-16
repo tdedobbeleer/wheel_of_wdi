@@ -3,13 +3,14 @@
 General Assembly WDI December 16 - Project 1
 
 
-Project: http://wheel-of-wdi.bitballoon.com/
-
-Trello Board: https://trello.com/b/zjN52Nde/wheel-of-wdi
+- Project: http://wheel-of-wdi.bitballoon.com/
+- Trello Board: https://trello.com/b/zjN52Nde/wheel-of-wdi
+- GitHub: https://github.com/chadchristensen/wheel_of_wdi.git
 
 ##Overview
 The goal of this project was to use our skills in HTML, CSS, and JavaScript to
-create a game that required manipulation of the DOM.
+create a game that required manipulation of the DOM.  I chose a variation of Wheel of Fortune based on
+phrases and people related to the Web Development Immersive program.
 
 ##How to play
 1. Click the Play button
