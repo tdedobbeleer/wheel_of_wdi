@@ -166,7 +166,7 @@ $( document ).ready(function() {
         } // end of if statement, else block
 
         if ($(".letter[style='display: none;']").length === 0 && isGameOver !== 1) {
-            alert("Congrats, you win $" + score + "!");
+            alert("Je bent al gewonnen, kwibus!");
         }
     }); // end of click event for player guess
 
