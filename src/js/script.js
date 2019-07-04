@@ -7,7 +7,7 @@ $( document ).ready(function() {
             ["", "T", "H", "U", "I", "S", "", "V", "E", "R", "P", "E", "S", "T"],
             ["", "", "", "", "", "", "", "", "", "", "", ""]
         ],
-        topic: "Dit spel",
+        topic: "Verspreekwoord",
         answer: "rad van chagrijn"
     }
 
