@@ -3,23 +3,13 @@ $( document ).ready(function() {
     var words = [{
         word: [
             ["", "", "", "", "", "", "", "", "", "", "", ""],
-            ["", "", "", "R", "A", "D", " ", "V", "A", "N", "", "", "", ""],
-            ["", "", "", "C", "H", "A", "G", "R", "I", "J", "N", "", "", ""],
+            ["", "", "O", "O", "S", "T", " ", "W", "E", "S", "T", "", "", ""],
+            ["", "T", "H", "U", "I", "S", "", "V", "E", "R", "P", "E", "S", "T"],
             ["", "", "", "", "", "", "", "", "", "", "", ""]
         ],
         topic: "Dit spel",
         answer: "rad van chagrijn"
-    },
-        {
-            word: [
-                ["", "", "", "", "", "", "", "", "", "", "", ""],
-                ["", "", "", "R", "A", "D", " ", "V", "A", "N", "", "", "", ""],
-                ["", "", "", "F", "O", "R", "T", "U", "I", "N", "", "", "", ""],
-                ["", "", "", "", "", "", "", "", "", "", "", ""]
-            ],
-            topic: "Het echte spel",
-            answer: "rad van fortuin"
-        }
+    }
 
     ]; // Close words
 
@@ -205,6 +195,17 @@ $( document ).ready(function() {
 
     });
 
+    $(".score_minus").click(function() {
+       var score = $(this).parent().find(".score_value").first();
+       if (score.text() !== '0') {
+           score.text(Number(score.text()) - 50);
+       }
+    });
+
+    $(".score_plus").click(function() {
+        var score = $(this).parent().find(".score_value").first();
+        score.text(Number(score.text()) + 50);
+    });
     //Start the game
     playGame();
 });

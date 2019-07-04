@@ -296,3 +296,16 @@ label {
     margin-top: 10px;
     margin-bottom: 15px;
 }
+
+#score1 {
+    float: left;
+}
+
+#score2 {
+    float: right;
+}
+
+.score_value {
+    padding-right: 20px;
+    padding-left: 20px;
+}
